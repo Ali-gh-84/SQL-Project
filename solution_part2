@@ -1,0 +1,83 @@
+-- 44)
+-- select * from CUSTOMER c
+-- join CUSTOMER_ORDER co
+-- on c.CUSTOMER_ID = co.CUSTOMER_ID
+-- 45)
+-- select c.CUSTOMER_ID, c.NAME, c.CITY, c.STREET_ADDRESS, co.ORDER_DATE
+-- from CUSTOMER c
+-- join CUSTOMER_ORDER co
+-- on c.CUSTOMER_ID = co.CUSTOMER_ID
+-- 46)
+-- select *
+-- FROM CUSTOMER_ORDER co
+-- JOIN PRODUCT p
+-- ON co.PRODUCT_ID = p.PRODUCT_ID
+-- WHERE co.CUSTOMER_ID = 3
+-- 47)
+-- select c.CUSTOMER_ID, c.NAME, c.STREET_ADDRESS
+-- from CUSTOMER c
+-- where c.CUSTOMER_ID not in(
+--     select CUSTOMER_ID
+--     from CUSTOMER_ORDER
+--     )
+-- 48)
+-- select p.PRODUCT_ID, p.DESCRIPTION, p.PRICE
+-- from PRODUCT p
+-- where p.PRODUCT_ID not in(
+--     select PRODUCT_ID
+--     from CUSTOMER_ORDER
+--     )
+-- 49)
+-- select *
+-- from CUSTOMER_ORDER co
+-- join PRODUCT p
+-- on co.PRODUCT_ID = p.PRODUCT_ID
+-- where co.SHIP_DATE between 2015-05-15 and 2015-05-18
+-- 50)
+-- select *
+-- from CUSTOMER c
+-- join CUSTOMER_ORDER co
+-- on c.CUSTOMER_ID = co.CUSTOMER_ID
+-- where co.SHIP_DATE between 2015-05-15 and 2015-05-18
+-- 51)
+-- select c.NAME, c.STREET_ADDRESS
+-- from CUSTOMER c
+--          join CUSTOMER_ORDER cr on c.CUSTOMER_ID = cr.CUSTOMER_ID
+--          join PRODUCT p on cr.PRODUCT_ID = p.PRODUCT_ID
+-- where p.PRICE = 4
+-- 52)
+-- select c.NAME, p.PRICE
+-- from CUSTOMER c
+--          join CUSTOMER_ORDER cr on c.CUSTOMER_ID = cr.CUSTOMER_ID
+--          join PRODUCT p on cr.PRODUCT_ID = p.PRODUCT_ID
+-- group by c.NAME, p.PRICE
+-- having count(p.PRICE)
+-- *** 53)
+-- WITH TopProduct AS (
+--     SELECT PRODUCT_ID
+--     FROM CUSTOMER_ORDER
+--     GROUP BY PRODUCT_ID
+--     ORDER BY SUM(ORDER_QTY) DESC
+--     LIMIT 1
+-- )
+-- SELECT DISTINCT c.CUSTOMER_ID, c.NAME
+-- FROM CUSTOMER_ORDER co
+--          JOIN CUSTOMER c ON co.CUSTOMER_ID = c.CUSTOMER_ID
+-- WHERE co.PRODUCT_ID = (SELECT PRODUCT_ID FROM TopProduct)
+-- 54)
+-- SELECT c.CUSTOMER_ID, c.NAME, co.PRODUCT_ID
+-- FROM CUSTOMER c
+-- JOIN CUSTOMER_ORDER co
+-- ON c.CUSTOMER_ID = co.CUSTOMER_ID
+-- WHERE co.ORDER_QTY > 400
+-- GROUP BY c.CUSTOMER_ID, c.NAME, co.PRODUCT_ID
+-- HAVING COUNT(co.PRODUCT_ID);
+-- 55)
+-- SELECT A.name as cn1, B.name as cn2, A.state
+-- FROM Customer A, Customer B
+-- WHERE A.Customer_ID <> B.Customer_ID
+--   AND
+--     A.state = B.state
+
+
+

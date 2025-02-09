@@ -1,0 +1,170 @@
+-- 1)
+-- select * from STATION_DATA
+-- 2)
+-- select station_number from STATION_DATA
+-- 3)
+-- select station_number, report_code, temperature
+-- from STATION_DATA
+-- 4)
+-- select station_number, report_code, temperature as dama
+-- from STATION_DATA
+-- 5)
+-- select station_number, report_code, temperature , temperature * 1.8 + 32 as tempfa
+-- from STATION_DATA
+-- 6)
+-- SELECT
+--     station_number,
+--     report_code,
+--     temperature,
+--     round( temperature * 1.8 + 32 , 2 ) AS tempfa
+-- FROM STATION_DATA
+-- 7)
+-- select concat(year, '/', month, '/', day) as date
+-- from STATION_DATA
+-- 8)
+-- select * from STATION_DATA
+-- where year = 2010
+-- 9)
+-- select * from STATION_DATA
+-- where year != 2010
+-- 10)
+-- select * from STATION_DATA
+-- where year between 2004 and 2009
+-- 11)
+-- select * from STATION_DATA
+-- -- where year > 2008 or year < 2006
+-- where year not between 2006 and 2008
+-- 12)
+-- select * from STATION_DATA
+-- where year = 2010 and (month = 1 or month = 2 or month = 3)
+-- 13)
+-- select * from STATION_DATA
+-- where month < 6
+-- 14)
+-- select * from STATION_DATA
+-- where month <= 6 and day between 1 and 25
+-- 15)
+-- select * from STATION_DATA
+-- where year between 2000 and 2005
+--     and ((month = 1 and day = 1) or
+--     (month = 4 and day = 1) or
+--     (month = 7 and day = 1) or
+--     (month = 10 and day = 1))
+-- 16)
+-- select * from STATION_DATA
+-- where report_code like '______'
+-- 17)
+-- select * from STATION_DATA
+-- where report_code like 'A%'
+-- 18)
+-- select * from STATION_DATA
+-- where report_code like '%A'
+-- 19)
+-- select * from STATION_DATA
+-- where report_code like '_A%'
+-- 20)
+-- select * from STATION_DATA
+-- where report_code like '_A%A'
+-- 21)
+-- select * from STATION_DATA
+-- where rain = 1 and hail = 0   --ture = 1  ,  false = 0
+-- 22)
+-- select * from STATION_DATA
+-- where precipitation is not null
+-- 23)
+-- select year, count(tornado)
+-- from STATION_DATA
+-- group by year
+-- having tornado = 1
+-- 24)
+-- select count(tornado) as tornado, year, month
+-- from STATION_DATA
+-- where tornado = 1
+-- group by year, month
+-- order by year desc
+-- 25)
+-- select count(day), year, month
+-- from STATION_DATA
+-- where temperature > 25
+-- group by year, month
+-- order by year
+-- 26)
+-- select *
+-- from STATION_DATA
+-- order by temperature
+-- 27)
+-- select *
+-- from STATION_DATA
+-- order by temperature desc
+-- 28)
+-- select *
+-- from STATION_DATA
+-- order by temperature desc, year
+-- 29)
+-- select *
+-- from STATION_DATA
+-- order by day desc , month desc , year desc
+-- 30)
+-- select count(tornado), year, month
+-- from STATION_DATA
+-- where tornado = 1
+-- group by year, month
+-- order by year, month
+-- 31)
+-- select min(temperature)
+-- from STATION_DATA
+-- where month = 1
+-- 32)
+-- select max(temperature)
+-- from STATION_DATA
+-- where month = 1 and year = 2009
+-- 33)
+-- select year, month, avg(temperature)
+-- from STATION_DATA
+-- where year = 2009
+-- group by month
+-- 34)
+-- select year, count(rain)
+-- from STATION_DATA
+-- where rain = 1
+-- group by year
+-- 35)
+-- select year, sum(snow_depth) as total_snow
+-- from STATION_DATA
+-- group by year
+-- 36)
+-- select year, sum(snow_depth), sum(rain), min(rain)
+-- from STATION_DATA
+-- where year >= 2000
+-- group by year
+-- 37)
+-- select year, sum(rain), tornado
+-- from STATION_DATA
+-- where tornado = 1
+-- group by year
+-- 38)
+-- select year, sum(rain)
+-- from STATION_DATA
+-- group by year
+-- having sum(rain) > 2
+-- 39)
+-- select month, sum(snow_depth)
+-- from STATION_DATA
+-- where year = 2009
+-- group by month
+-- having sum(snow_depth) > 5
+-- 40)
+-- select year, sum(rain)
+-- from STATION_DATA
+-- where tornado = 1
+-- group by year
+-- having sum(rain) > 3
+-- 41)
+-- SELECT report_code, year, month, day, wind_speed,
+--        CASE
+--             WHEN wind_speed >= 40 THEN 'HIGH'
+--             WHEN wind_speed >= 30 AND wind_speed < 40 THEN 'motadel'
+--             ELSE 'LOW'
+--        END as wind_severity
+-- FROM station_data
+
